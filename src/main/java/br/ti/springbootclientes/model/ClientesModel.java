@@ -26,7 +26,6 @@ public class ClientesModel {
 	@Column(nullable = false)
 	private String acconuntType;
 	@Column(nullable = false)
-	@Size(min = 11, max = 11)
 	private String cpf;
 	public UUID getId() {
 		return id;
