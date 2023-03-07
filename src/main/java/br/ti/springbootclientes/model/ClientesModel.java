@@ -1,13 +1,9 @@
 package br.ti.springbootclientes.model;
 
-import java.util.UUID;
 
-import javax.validation.constraints.Size;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -15,8 +11,8 @@ import jakarta.persistence.Table;
 @Table(name = "TB_Clientes")
 public class ClientesModel {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private UUID id;
+	@Column(nullable = false)
+	private String cpf;
 	@Column(nullable = false)
 	private String fristName;
 	@Column(nullable = false)
@@ -25,14 +21,7 @@ public class ClientesModel {
 	private String stateCliente;
 	@Column(nullable = false)
 	private String acconuntType;
-	@Column(nullable = false)
-	private String cpf;
-	public UUID getId() {
-		return id;
-	}
-	public void setId(UUID id) {
-		this.id = id;
-	}
+
 	public String getFristName() {
 		return fristName;
 	}
