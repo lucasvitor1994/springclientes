@@ -1,28 +1,20 @@
 package br.ti.springbootclientes.dtos;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import jakarta.validation.constraints.NotBlank;
 
 public class ClientesDtos {
 	
-	@Size(min = 11, max = 11)
 	@NotBlank
 	private String cpf;
-	@NotBlank
+	@NotBlank(message = "primeiro nome nao pode ser vazio")
 	private String fristName;
-	@NotBlank(message = "nao pode ser vazio")
+	@NotBlank(message = "ultimo nome nao pode ser vazio")
 	private String lastName;
 	@NotBlank
-	@Size(max = 1)
 	private String stateCliente;
 	@NotBlank
 	private String acconuntType;
-	
+
 	
 	public String getCpf() {
 		return cpf;
